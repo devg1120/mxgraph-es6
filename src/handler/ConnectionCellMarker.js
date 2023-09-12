@@ -9,6 +9,11 @@ export class ConnectionCellMarker extends mxCellMarker {
 
   getCell(me) {
     var cell = super.getCell(me);
+
+    /*GSBF*/ if (this.connectionHandler == undefined) {
+       return cell;
+    }
+
     this.connectionHandler.error = null;
 
     if (cell == null && this.connectionHandler.currentPoint != null) {
